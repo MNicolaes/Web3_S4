@@ -1,0 +1,20 @@
+1- SaveNewItem : 
+    On complète la méthode dans le container, elle ne prend pas de params puisque on peut 
+    retrouver l'info dans le state : this.state.formItem.picture , il nous suffit alors de
+    le placer dans l'array des items qui sont affichés : items.concat
+
+    Il faut ensuite suivre la route que prend cette fonction et aller voir où elle doit être utilisée
+    On voit que le container apelle le composant Gallery et lui donne la fonction, dans le composant
+    Gallery, on voit qu'il apelle GalleryItemForm et il lui passe la fonction, c'est donc dans ce composant
+    que l'on va faire le dernier lien avec notre fonction dans le container.
+    Dans la fonction anonyme ligne 24, on utilise la fonction saveNewItem qui nous vient du container.
+
+2- RemoveItem : 
+    On procède de la même façon : on définit la fonction dans le container et on suit le chemin que va prendre
+    cette fonction -> on se retrouve alors dans le composant GalleryItem où on apelle la fonction sur le click 
+    du button delete. Il faut bien s'assurer que la fonction arriver jusqu'à ce composant via les props des composants
+    intermediares.
+    On utilise le filter dans la fonction removeItem pour récupérer une array sans l'item que l'on veut supprimer.
+    L'idéal serait d'attribuer un ID unique à chaque item puisque dans cette solution, il suffit que deux items aient
+    la meme image et la meme description pour qu'ils soient tous les deux supprimés.
+    

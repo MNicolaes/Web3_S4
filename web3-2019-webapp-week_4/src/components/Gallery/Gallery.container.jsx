@@ -100,8 +100,15 @@ class GalleryContainer extends React.Component {
     });
   }
   removeItem(item) {
+    console.log("Item recu :", item);
+    console.log("Picture item: ", item.picture);
     const { items } = this.state;
-    const newItems = items.concat(items.slice(items.indexOf({picture:item.picture, description:item.description}), 1))
+    console.log("Items : ", items);
+    
+    
+    const newItems = items.filter(function(e){
+      return (e.description !== item.description || e.picture !== item.picture);
+    });
     this.setState({
       items: newItems
     })
