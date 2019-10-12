@@ -17,4 +17,7 @@
     On utilise le filter dans la fonction removeItem pour récupérer une array sans l'item que l'on veut supprimer.
     L'idéal serait d'attribuer un ID unique à chaque item puisque dans cette solution, il suffit que deux items aient
     la meme image et la meme description pour qu'ils soient tous les deux supprimés.
-    
+
+3- Pour placer un id dans les items, on crée un champ id dans le state et on rajoute cet attribut à un formItem, on suit 
+    la chaîne pour s'assurer que l'info arrive jusque où il faut, et on peut maintenant faire les delete en fonction de l'id.
+    Ce sera aussi utile pour faire l'update... ---> Vérifier que c'est la bonne façon de faire pour placer un id !! 

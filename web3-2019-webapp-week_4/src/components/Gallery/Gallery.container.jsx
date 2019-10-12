@@ -4,11 +4,13 @@ import Gallery from "./Gallery";
 const DEFAULT_ITEMS = [
   {
     picture: "welcome-keep-calm.jpg",
-    description: "This picture is one among..."
+    description: "This picture is one among...",
+    id: -1
   },
   {
     picture: "",
-    description: ""
+    description: "",
+    id: -2
   }
 ];
 
@@ -21,8 +23,10 @@ class GalleryContainer extends React.Component {
       items: [],
       formItem: {
         picture: "",
-        description: ""
-      }
+        description: "",
+        id: ""
+      },
+      nextId: 0
     };
 
     this.setNewItemText = this.setNewItemText.bind(this);
@@ -93,8 +97,10 @@ class GalleryContainer extends React.Component {
   saveNewItem() {
     const { items } = this.state;
     //on n'a pas besoin de params puisque on a déjà l'info dans l'état
-    const newItem = {picture:this.state.formItem.picture, description:this.state.formItem.description};
+    this.nextId();
+    const newItem = {picture:this.state.formItem.picture, description:this.state.formItem.description, id:this.state.nextId};
     const newItems = items.concat(newItem)
+    console.log("The new item with id : ", newItem);
     this.setState({
       items: newItems
     });
@@ -107,13 +113,25 @@ class GalleryContainer extends React.Component {
     
     
     const newItems = items.filter(function(e){
-      return (e.description !== item.description || e.picture !== item.picture);
+      //return (e.description !== item.description || e.picture !== item.picture);
+      return e.id !== item.id;
     });
     this.setState({
       items: newItems
     })
 
   }
+  //Returns the next item for an item and increments it
+  nextId(){
+    const {nextId} = this.state;
+    console.log("Current ID", nextId);
+    this.setState({
+      nextId: nextId+1
+    });
+    return nextId;
+  }
+
+
   updateItem() {
     //il faut trouver la solution pour permettre de changer l'item !
     

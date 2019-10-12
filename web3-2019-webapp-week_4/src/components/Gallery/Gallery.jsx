@@ -19,11 +19,12 @@ function Gallery({
   return (
     <Container fluid>
       {items.map((item, index) => {
-        const { description, picture } = item;
+        const { description, picture, id } = item;
 
         return (
           <GalleryItem
             key={index}
+            id={id}
             picture={picture}
             description={description}
             removeItem={removeItem}
