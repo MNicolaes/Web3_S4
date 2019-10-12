@@ -115,6 +115,7 @@ class GalleryContainer extends React.Component {
 
   }
   updateItem() {
+    //il faut trouver la solution pour permettre de changer l'item !
     
   }
 }
