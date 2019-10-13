@@ -10,7 +10,7 @@ import "./Gallery.css";
 function Gallery({
   items,
   formItem,
-
+  updateItem,
   setNewItemText,
   setNewItemPicture,
   saveNewItem,
@@ -28,6 +28,7 @@ function Gallery({
             picture={picture}
             description={description}
             removeItem={removeItem}
+            updateItem={updateItem}
           />
         );
       })}

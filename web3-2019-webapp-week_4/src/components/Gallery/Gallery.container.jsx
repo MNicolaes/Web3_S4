@@ -107,7 +107,7 @@ class GalleryContainer extends React.Component {
   }
   removeItem(item) {
     console.log("Item recu :", item);
-    console.log("Picture item: ", item.picture);
+   //console.log("Picture item: ", item.picture);
     const { items } = this.state;
     console.log("Items : ", items);
     
@@ -132,9 +132,14 @@ class GalleryContainer extends React.Component {
   }
 
 
-  updateItem() {
-    //il faut trouver la solution pour permettre de changer l'item !
+  updateItem(item) {
     
+    console.log("Update item received : ", item);
+    const {items } = this.state;
+    const newItems = items.filter((e)=> e.id !== item.id).concat(item);
+    this.setState({
+      items: newItems
+    });
   }
 }
 
