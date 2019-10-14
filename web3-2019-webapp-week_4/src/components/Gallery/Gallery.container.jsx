@@ -135,7 +135,9 @@ class GalleryContainer extends React.Component {
   updateItem(item) {
     
     console.log("Update item received : ", item);
+
     const {items } = this.state;
+    //console.log("Item in array : ",items.filter((e)=>e.id !== item.id)[0]);
     const newItems = items.filter((e)=> e.id !== item.id).concat(item);
     this.setState({
       items: newItems
