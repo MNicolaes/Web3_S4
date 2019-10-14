@@ -6,10 +6,15 @@ import Description from "../../Description/Description";
 function GalleryItem({
     picture,
     description,
+    id,
     removeItem
 })  {
   
-    const deleteItem = (e) => removeItem({picture:picture, description:description})
+    const deleteItem = (e) => {
+        //console.log("Event : ", e);
+        //console.log("picture :", {picture});
+        removeItem({picture,description, id})
+    }
     return (
         <Row className="m-2 justify-content-start border border-dark rounded-lg">
             <Picture picture={picture} /> 
