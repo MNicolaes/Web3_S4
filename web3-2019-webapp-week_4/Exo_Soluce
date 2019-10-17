@@ -21,3 +21,12 @@
 3- Pour placer un id dans les items, on crée un champ id dans le state et on rajoute cet attribut à un formItem, on suit 
     la chaîne pour s'assurer que l'info arrive jusque où il faut, et on peut maintenant faire les delete en fonction de l'id.
     Ce sera aussi utile pour faire l'update... ---> Vérifier que c'est la bonne façon de faire pour placer un id !! 
+
+
+
+4- Tentative pour rendre le texte éditable et le sauvegarder : on va placer les fonctions dans GalleryItem et les passer à description,
+    meilleure solution que de devoir faire remonter manuellement l'information ?
+
+
+QUESTIONS : 
+    1- Bonne façon de passer de l'info d'un composant à l'autre ?
