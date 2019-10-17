@@ -51,6 +51,14 @@ class GalleryContainer extends React.Component {
   }
 
   async componentDidMount() {
+
+    //TODO getting items from DB by calling API
+    /*
+    let newItems
+    fetch('localhost:8000/items')
+    .then(response => newItems = response)
+    */
+
     try {
       const items = await this.loadItems();
       this.setState({
